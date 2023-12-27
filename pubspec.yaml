@@ -23,6 +23,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  dart_fix: ^0.5.5  
 
   flutter_lints: ^2.0.0
 

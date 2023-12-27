@@ -18,12 +18,13 @@ dependencies:
   get: ^4.6.6
   dio: ^5.4.0
   dartz: ^0.10.1
-  provider: ^6.1.1
+  # provider: ^6.1.1
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  dart_fix: ^0.5.5  
+    
 
   flutter_lints: ^2.0.0
 

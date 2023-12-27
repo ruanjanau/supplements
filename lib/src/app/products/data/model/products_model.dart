@@ -1,4 +1,4 @@
-import 'package:supplements/src/app/domain/entities/entity.dart';
+import '../../domain/entities/entity.dart';
 
 class ProductsModel {
   final int? id;

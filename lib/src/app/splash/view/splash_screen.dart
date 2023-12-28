@@ -1,70 +1,52 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../products/presentation/view/view.dart';
+import '../../login/view/login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+class _SplashScreenState extends State<SplashScreen> {
+  var width = 0.0;
+  var heigth = 0.0;
 
   @override
   void initState() {
-    super.initState();
-
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-
-    _animation = Tween<double>(begin: 0.5, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
-
-    _controller.forward();
-
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const ProductsPage(),
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        width = 300.0;
+        heigth = 300.0;
+      });
+      final nav = Navigator.of(context);
+      await Future.delayed(const Duration(seconds: 3));
+      nav.pushReplacement(
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAniumation) => LoginPage(),
+          settings: const RouteSettings(
+            name: '/login',
+          ),
         ),
       );
     });
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ScaleTransition(
-          scale: _animation,
-          child: Image.asset(
-            'assets/splash_image.png',
-            height: 300.h,
-            width: 300.w,
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 3),
+          width: width,
+          height: heigth,
+          child: Hero(
+            tag: 'splash',
+            child: Image.asset('assets/image/janau.jpeg'),
           ),
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }

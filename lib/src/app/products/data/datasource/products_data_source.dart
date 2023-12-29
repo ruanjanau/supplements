@@ -11,7 +11,7 @@ abstract class IProductsDataSource {
 class ProductsDataSource implements IProductsDataSource {
   final Dio dio;
 
-  ProductsDataSource({required this.dio});
+  ProductsDataSource(this.dio);
   @override
   FutureOr<List<ProductsModel>> getProducts() async {
     final response = await dio

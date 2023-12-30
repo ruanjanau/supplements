@@ -18,33 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() finAll,
+    required TResult Function() findAll,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? finAll,
+    TResult? Function()? findAll,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? finAll,
+    TResult Function()? findAll,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProductsEventFindAll value) finAll,
+    required TResult Function(_ProductsEventFindAll value) findAll,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProductsEventFindAll value)? finAll,
+    TResult? Function(_ProductsEventFindAll value)? findAll,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProductsEventFindAll value)? finAll,
+    TResult Function(_ProductsEventFindAll value)? findAll,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,7 +91,7 @@ class _$ProductsEventFindAllImpl implements _ProductsEventFindAll {
 
   @override
   String toString() {
-    return 'ProductsEvent.finAll()';
+    return 'ProductsEvent.findAll()';
   }
 
   @override
@@ -107,27 +107,27 @@ class _$ProductsEventFindAllImpl implements _ProductsEventFindAll {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() finAll,
+    required TResult Function() findAll,
   }) {
-    return finAll();
+    return findAll();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? finAll,
+    TResult? Function()? findAll,
   }) {
-    return finAll?.call();
+    return findAll?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? finAll,
+    TResult Function()? findAll,
     required TResult orElse(),
   }) {
-    if (finAll != null) {
-      return finAll();
+    if (findAll != null) {
+      return findAll();
     }
     return orElse();
   }
@@ -135,27 +135,27 @@ class _$ProductsEventFindAllImpl implements _ProductsEventFindAll {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProductsEventFindAll value) finAll,
+    required TResult Function(_ProductsEventFindAll value) findAll,
   }) {
-    return finAll(this);
+    return findAll(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProductsEventFindAll value)? finAll,
+    TResult? Function(_ProductsEventFindAll value)? findAll,
   }) {
-    return finAll?.call(this);
+    return findAll?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProductsEventFindAll value)? finAll,
+    TResult Function(_ProductsEventFindAll value)? findAll,
     required TResult orElse(),
   }) {
-    if (finAll != null) {
-      return finAll(this);
+    if (findAll != null) {
+      return findAll(this);
     }
     return orElse();
   }
@@ -172,7 +172,7 @@ mixin _$ProductsState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ProductsModel> products) data,
-    required TResult Function(String message) error,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -180,7 +180,7 @@ mixin _$ProductsState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ProductsModel> products)? data,
-    TResult? Function(String message)? error,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,7 +188,7 @@ mixin _$ProductsState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ProductsModel> products)? data,
-    TResult Function(String message)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -256,7 +256,7 @@ class __$$ProductsStateInitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProductsStateInitialImpl implements _ProductsStateInitial {
-  const _$ProductsStateInitialImpl();
+  _$ProductsStateInitialImpl();
 
   @override
   String toString() {
@@ -279,7 +279,7 @@ class _$ProductsStateInitialImpl implements _ProductsStateInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ProductsModel> products) data,
-    required TResult Function(String message) error,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -290,7 +290,7 @@ class _$ProductsStateInitialImpl implements _ProductsStateInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ProductsModel> products)? data,
-    TResult? Function(String message)? error,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -301,7 +301,7 @@ class _$ProductsStateInitialImpl implements _ProductsStateInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ProductsModel> products)? data,
-    TResult Function(String message)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -349,7 +349,7 @@ class _$ProductsStateInitialImpl implements _ProductsStateInitial {
 }
 
 abstract class _ProductsStateInitial implements ProductsState {
-  const factory _ProductsStateInitial() = _$ProductsStateInitialImpl;
+  factory _ProductsStateInitial() = _$ProductsStateInitialImpl;
 }
 
 /// @nodoc
@@ -371,7 +371,7 @@ class __$$ProductsStateLoadingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProductsStateLoadingImpl implements _ProductsStateLoading {
-  const _$ProductsStateLoadingImpl();
+  _$ProductsStateLoadingImpl();
 
   @override
   String toString() {
@@ -394,7 +394,7 @@ class _$ProductsStateLoadingImpl implements _ProductsStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ProductsModel> products) data,
-    required TResult Function(String message) error,
+    required TResult Function(String error) error,
   }) {
     return loading();
   }
@@ -405,7 +405,7 @@ class _$ProductsStateLoadingImpl implements _ProductsStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ProductsModel> products)? data,
-    TResult? Function(String message)? error,
+    TResult? Function(String error)? error,
   }) {
     return loading?.call();
   }
@@ -416,7 +416,7 @@ class _$ProductsStateLoadingImpl implements _ProductsStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ProductsModel> products)? data,
-    TResult Function(String message)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -464,7 +464,7 @@ class _$ProductsStateLoadingImpl implements _ProductsStateLoading {
 }
 
 abstract class _ProductsStateLoading implements ProductsState {
-  const factory _ProductsStateLoading() = _$ProductsStateLoadingImpl;
+  factory _ProductsStateLoading() = _$ProductsStateLoadingImpl;
 }
 
 /// @nodoc
@@ -501,7 +501,7 @@ class __$$ProductsStateDataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProductsStateDataImpl implements _ProductsStateData {
-  const _$ProductsStateDataImpl({required final List<ProductsModel> products})
+  _$ProductsStateDataImpl({required final List<ProductsModel> products})
       : _products = products;
 
   final List<ProductsModel> _products;
@@ -542,7 +542,7 @@ class _$ProductsStateDataImpl implements _ProductsStateData {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ProductsModel> products) data,
-    required TResult Function(String message) error,
+    required TResult Function(String error) error,
   }) {
     return data(products);
   }
@@ -553,7 +553,7 @@ class _$ProductsStateDataImpl implements _ProductsStateData {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ProductsModel> products)? data,
-    TResult? Function(String message)? error,
+    TResult? Function(String error)? error,
   }) {
     return data?.call(products);
   }
@@ -564,7 +564,7 @@ class _$ProductsStateDataImpl implements _ProductsStateData {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ProductsModel> products)? data,
-    TResult Function(String message)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -612,8 +612,8 @@ class _$ProductsStateDataImpl implements _ProductsStateData {
 }
 
 abstract class _ProductsStateData implements ProductsState {
-  const factory _ProductsStateData(
-      {required final List<ProductsModel> products}) = _$ProductsStateDataImpl;
+  factory _ProductsStateData({required final List<ProductsModel> products}) =
+      _$ProductsStateDataImpl;
 
   List<ProductsModel> get products;
   @JsonKey(ignore: true)
@@ -627,7 +627,7 @@ abstract class _$$ProductsStateErrorImplCopyWith<$Res> {
           $Res Function(_$ProductsStateErrorImpl) then) =
       __$$ProductsStateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -641,12 +641,12 @@ class __$$ProductsStateErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? error = null,
   }) {
     return _then(_$ProductsStateErrorImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -655,14 +655,14 @@ class __$$ProductsStateErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProductsStateErrorImpl implements _ProductsStateError {
-  const _$ProductsStateErrorImpl({required this.message});
+  _$ProductsStateErrorImpl({required this.error});
 
   @override
-  final String message;
+  final String error;
 
   @override
   String toString() {
-    return 'ProductsState.error(message: $message)';
+    return 'ProductsState.error(error: $error)';
   }
 
   @override
@@ -670,11 +670,11 @@ class _$ProductsStateErrorImpl implements _ProductsStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProductsStateErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -689,9 +689,9 @@ class _$ProductsStateErrorImpl implements _ProductsStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ProductsModel> products) data,
-    required TResult Function(String message) error,
+    required TResult Function(String error) error,
   }) {
-    return error(message);
+    return error(this.error);
   }
 
   @override
@@ -700,9 +700,9 @@ class _$ProductsStateErrorImpl implements _ProductsStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ProductsModel> products)? data,
-    TResult? Function(String message)? error,
+    TResult? Function(String error)? error,
   }) {
-    return error?.call(message);
+    return error?.call(this.error);
   }
 
   @override
@@ -711,11 +711,11 @@ class _$ProductsStateErrorImpl implements _ProductsStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ProductsModel> products)? data,
-    TResult Function(String message)? error,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(this.error);
     }
     return orElse();
   }
@@ -759,10 +759,10 @@ class _$ProductsStateErrorImpl implements _ProductsStateError {
 }
 
 abstract class _ProductsStateError implements ProductsState {
-  const factory _ProductsStateError({required final String message}) =
+  factory _ProductsStateError({required final String error}) =
       _$ProductsStateErrorImpl;
 
-  String get message;
+  String get error;
   @JsonKey(ignore: true)
   _$$ProductsStateErrorImplCopyWith<_$ProductsStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;

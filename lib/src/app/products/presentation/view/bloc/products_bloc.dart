@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,19 +12,19 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   final ProductsDataSource _dataSource;
   ProductsBloc({required ProductsDataSource dataSource})
       : _dataSource = dataSource,
-        super(const _ProductsStateInitial()) {
+        super(ProductsState.initial()) {
     on<_ProductsEventFindAll>(_findAll);
   }
 
-  FutureOr<void> _findAll(
+  Future<void> _findAll(
       _ProductsEventFindAll event, Emitter<ProductsState> emit) async {
     try {
-      emit(const ProductsState.loading());
+      emit(ProductsState.loading());
       final products = await _dataSource.getProducts();
       await Future.delayed(const Duration(seconds: 2));
       emit(ProductsState.data(products: products));
     } catch (e) {
-      emit(const ProductsState.error(message: 'Error loading products'));
+      emit(ProductsState.error(error: 'Error loading products'));
     }
   }
 }

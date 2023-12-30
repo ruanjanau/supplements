@@ -13,66 +13,70 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Center(
-            child: Text(
-              'Login',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
+      body: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 100.0),
+            child: Column(
+              children: [
+                Center(
+                    child: Hero(
+                  tag: 'splash',
+                  child: Image.asset(
+                    'assets/image/j.png',
+                    height: 160,
+                  ),
+                )),
+                const SizedBox(height: 20),
+                TextFormFieldCustom(
+                  text: 'Usuário',
+                  icon: Icons.person,
+                  controller: _usernameController,
+                ),
+                const SizedBox(height: 20),
+                TextFormFieldCustom(
+                  text: 'Senha',
+                  icon: Icons.lock,
+                  controller: _passwordController,
+                ),
+                const SizedBox(height: 30),
+                ButtonCustom(
+                  text: 'Entrar',
+                  onPressed: () {
+                    String username = _usernameController.text;
+                    String password = _passwordController.text;
+
+                    loginController.setUsername(username);
+                    loginController.setPassword(password);
+
+                    String? validationMsg = loginController.validateLogin();
+                    if (validationMsg != null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(validationMsg),
+                        ),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        },
+                      );
+                      Future.delayed(const Duration(seconds: 1), () {
+                        Navigator.pop(context);
+                        Navigator.pushNamed(context, '/bloc/products/');
+                      });
+                    }
+                  },
+                ),
+              ],
             ),
           ),
-          const SizedBox(height: 50),
-          TextFormFieldCustom(
-            text: 'Usuário',
-            icon: Icons.person,
-            controller: _usernameController,
-          ),
-          const SizedBox(height: 20),
-          TextFormFieldCustom(
-            text: 'Senha',
-            icon: Icons.password,
-            controller: _passwordController,
-          ),
-          const SizedBox(height: 30),
-          ButtonCustom(
-            text: 'Entrar',
-            onPressed: () {
-              String username = _usernameController.text;
-              String password = _passwordController.text;
-
-              loginController.setUsername(username);
-              loginController.setPassword(password);
-
-              String? validationMsg = loginController.validateLogin();
-              if (validationMsg != null) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(validationMsg),
-                  ),
-                );
-              } else {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  },
-                );
-                Future.delayed(const Duration(seconds: 2), () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, '/products');
-                });
-              }
-            },
-          )
-        ],
+        ),
       ),
     );
   }

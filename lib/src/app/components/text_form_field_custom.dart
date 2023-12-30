@@ -17,10 +17,14 @@ class TextFormFieldCustom extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          child: Text(
+            text,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
         Container(
@@ -45,6 +49,9 @@ class TextFormFieldCustom extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    ),
                     controller: controller,
                   ),
                 ),

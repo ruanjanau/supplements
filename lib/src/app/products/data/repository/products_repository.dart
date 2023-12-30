@@ -6,7 +6,7 @@ import '../../domain/repository/repository.dart';
 import '../datasource/products_data_source.dart';
 
 class ProductsRepository implements IProductsRepository {
-  final ProductsDataSource dataSource;
+  final IProductsDataSource dataSource;
 
   ProductsRepository(this.dataSource);
   @override

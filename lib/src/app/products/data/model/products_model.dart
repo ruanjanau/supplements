@@ -3,7 +3,7 @@ import '../../domain/entities/entity.dart';
 class ProductsModel {
   final int? id;
   final String? product;
-  final int? price;
+  final String? price;
   final String? image;
   final String? details;
 
@@ -19,7 +19,7 @@ class ProductsModel {
     return ProductsModel(
       id: map['id']?.toInt(),
       product: map['product'] ?? '',
-      price: map['price']?.toInt(),
+      price: map['price'] ?? '',
       image: map['image'] ?? '',
       details: map['details'] ?? '',
     );
@@ -29,7 +29,7 @@ class ProductsModel {
     return ProductsEntity(
       id: id ?? 0,
       product: product ?? '',
-      price: price ?? 0,
+      price: price ?? '',
       image: image ?? '',
       details: details ?? '',
     );

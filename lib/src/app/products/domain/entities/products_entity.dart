@@ -1,7 +1,7 @@
 class ProductsEntity {
   final int id;
   final String product;
-  final int price;
+  final String price;
   final String image;
   final String details;
 

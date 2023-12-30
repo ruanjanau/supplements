@@ -4,7 +4,7 @@ import '../entities/entity.dart';
 import '../error/error.dart';
 
 abstract class IProductsUseCase {
-  Future<Either<ProductsError, List<ProductsEntity>>> getProducts();
+  Future<Either<ProductsError, List<ProductsEntity>>> call();
 }
 
 class ProductsUseCase implements IProductsUseCase {
@@ -12,7 +12,7 @@ class ProductsUseCase implements IProductsUseCase {
 
   ProductsUseCase(this.repository);
   @override
-  Future<Either<ProductsError, List<ProductsEntity>>> getProducts() {
+  Future<Either<ProductsError, List<ProductsEntity>>> call() {
     return repository.getAll();
   }
 }

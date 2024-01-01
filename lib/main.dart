@@ -14,7 +14,6 @@ void main() {
     RepositoryProvider(
       create: (context) => ProductsDataSource(Dio()),
       child: MaterialApp(
-        initialRoute: 'login',
         routes: {
           '/': (_) => const SplashScreen(),
           '/login': (_) => LoginPage(),

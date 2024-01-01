@@ -1,39 +1,41 @@
 import 'package:flutter/material.dart';
 
 class DetailsItem extends StatelessWidget {
-  final String text;
+  final String label;
   final String value;
 
   const DetailsItem({
     super.key,
-    required this.text,
+    required this.label,
     required this.value,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(),
-        RichText(
-          text: TextSpan(
-            text: text,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            textAlign: TextAlign.start,
             style: const TextStyle(
-              fontSize: 20.0,
+              color: Colors.blueGrey,
               fontWeight: FontWeight.w800,
+              fontSize: 22.0,
             ),
-            children: <TextSpan>[
-              TextSpan(
-                text: value,
-                style: const TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
           ),
-        ),
-      ],
+          Text(
+            value,
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 16.0,
+            ),
+          ),
+          const Divider(),
+        ],
+      ),
     );
   }
 }

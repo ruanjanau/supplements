@@ -48,20 +48,27 @@ class ProductsPage extends StatelessWidget {
               itemCount: products.length,
               itemBuilder: (context, index, realIndex) {
                 final product = products[index];
-                return CardProducts(
-                  image: product.image!,
-                  product: product.product!,
-                  price: product.price!,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/bloc/details/',
+                      arguments: product,
+                    );
+                  },
+                  child: CardProducts(
+                    image: product.image!,
+                    product: product.product!,
+                    price: product.price!,
+                  ),
                 );
               },
               options: CarouselOptions(
                 height: 400.0,
                 enlargeCenterPage: true,
-                // autoPlay: true,
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                // autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
             );

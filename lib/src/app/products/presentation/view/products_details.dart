@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:supplements/src/app/products/data/model/model.dart';
-import 'package:supplements/src/app/products/presentation/components/details_item.dart';
+import '../../data/model/model.dart';
+import '../components/components.dart';
 
 class ProductsDetails extends StatelessWidget {
   final ProductsModel model;
@@ -18,33 +18,29 @@ class ProductsDetails extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            height: 200.0,
+            height: 300.0,
             width: double.infinity,
             decoration: const BoxDecoration(
-              color: Colors.white30,
+              color: Colors.grey,
             ),
-            child: Image.asset(
+            child: Image.network(
               model.image!,
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
             ),
           ),
           const SizedBox(height: 10.0),
           DetailsItem(
-            text: 'Produto',
+            label: 'Produto:',
             value: model.product!,
           ),
           const SizedBox(height: 10.0),
-          Text(
-            model.price!,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w800,
-              fontSize: 16.0,
-            ),
+          DetailsItem(
+            label: 'Preço:',
+            value: model.price!,
           ),
           const SizedBox(height: 10.0),
           DetailsItem(
-            text: 'Detalhes:',
+            label: 'Detalhes:',
             value: model.details!,
           ),
         ],

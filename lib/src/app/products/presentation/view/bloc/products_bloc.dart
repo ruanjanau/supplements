@@ -21,7 +21,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     try {
       emit(ProductsState.loading());
       final products = await _dataSource.getProducts();
-      await Future.delayed(const Duration(seconds: 2));
       emit(ProductsState.data(products: products));
     } catch (e) {
       emit(ProductsState.error(error: 'Error loading products'));

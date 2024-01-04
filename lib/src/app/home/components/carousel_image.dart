@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CarouselProduct extends StatelessWidget {
-  const CarouselProduct({Key? key}) : super(key: key);
+class CarouselImage extends StatelessWidget {
+  const CarouselImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class CarouselProduct extends StatelessWidget {
               itemCount: 4,
               itemBuilder: (context, index) {
                 List<String> imagePaths = [
-                  'caminho_da_imagem_1',
-                  'caminho_da_imagem_2',
-                  'caminho_da_imagem_3',
-                  'caminho_da_imagem_4',
+                  'assets/image/max.png',
+                  'assets/image/max.png',
+                  'assets/image/max.png',
+                  'assets/image/max.png',
                 ];
                 return Padding(
                   padding: const EdgeInsets.all(8.0),

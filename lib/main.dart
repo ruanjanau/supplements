@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'src/app/home/data/model/model.dart';
+import 'src/app/product/data/model/model.dart';
 
 import 'src/app/login/view/login.dart';
-import 'src/app/home/data/datasource/datasource.dart';
-import 'src/app/home/presentation/view/bloc/products_bloc.dart';
-import 'src/app/home/presentation/view/view.dart';
+import 'src/app/product/data/datasource/datasource.dart';
+import 'src/app/product/presentation/view/bloc/products_bloc.dart';
+import 'src/app/product/presentation/view/view.dart';
 import 'src/app/splash/view/splash.dart';
 
 void main() {

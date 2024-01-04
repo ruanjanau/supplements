@@ -65,6 +65,7 @@ class ProductsPage extends StatelessWidget {
               },
               options: CarouselOptions(
                 height: 400.0,
+                autoPlay: true,
                 enlargeCenterPage: true,
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,

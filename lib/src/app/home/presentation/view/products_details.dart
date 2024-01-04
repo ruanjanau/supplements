@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../components/components.dart';
 import '../../data/model/model.dart';
 import '../components/components.dart';
 
@@ -12,8 +13,8 @@ class ProductsDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detalhes do Produto'),
+      appBar: const CustomAppBar(
+        label: 'Detalhes do Produto',
       ),
       body: ListView(
         children: [

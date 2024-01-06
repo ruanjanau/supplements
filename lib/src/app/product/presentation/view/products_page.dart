@@ -1,7 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:supplements/src/app/components/components.dart';
 import '../../data/model/model.dart';
 
 import '../components/components.dart';
@@ -14,9 +14,10 @@ class ProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 197, 195, 195),
-      appBar: AppBar(
-        title: const Text('Suplementos'),
+      backgroundColor: Colors.redAccent,
+      appBar: const CustomAppBar(
+        label: 'Produtos',
+        icon: Icons.arrow_back_ios_new,
       ),
       body: BlocListener<ProductsBloc, ProductsState>(
         listenWhen: (previous, current) {
@@ -33,48 +34,48 @@ class ProductsPage extends StatelessWidget {
           );
         },
         child: BlocSelector<ProductsBloc, ProductsState, List<ProductsModel>>(
-            selector: (state) {
-          return state.maybeWhen(
-            data: (products) => products,
-            orElse: () => [],
-          );
-        }, builder: (_, products) {
-          if (products.isEmpty) {
-            return const Center(
-              child: CircularProgressIndicator(),
+          selector: (state) {
+            return state.maybeWhen(
+              data: (products) => products,
+              orElse: () => [],
             );
-          } else {
-            return CarouselSlider.builder(
-              itemCount: products.length,
-              itemBuilder: (context, index, realIndex) {
-                final product = products[index];
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/bloc/details/',
-                      arguments: product,
-                    );
-                  },
-                  child: CardProducts(
-                    image: product.image!,
-                    product: product.product!,
-                    price: product.price!,
-                  ),
-                );
-              },
-              options: CarouselOptions(
-                height: 400.0,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                viewportFraction: 0.8,
-              ),
-            );
-          }
-        }),
+          },
+          builder: (_, products) {
+            if (products.isEmpty) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else {
+              return GridView.builder(
+                primary: false,
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 1.0,
+                  mainAxisSpacing: 12.0,
+                ),
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/bloc/details/',
+                        arguments: product,
+                      );
+                    },
+                    child: CardProducts(
+                      image: product.image!,
+                      product: product.product!,
+                      price: product.price!,
+                      brand: product.brand!,
+                    ),
+                  );
+                },
+              );
+            }
+          },
+        ),
       ),
     );
   }

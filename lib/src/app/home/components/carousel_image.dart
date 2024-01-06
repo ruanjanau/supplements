@@ -8,16 +8,17 @@ class CarouselImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             'Promoções',
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: 20.0,
               fontWeight: FontWeight.w700,
             ),
           ),
           SizedBox(
-            height: 120.0,
+            height: 260.0,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 4,
@@ -34,8 +35,8 @@ class CarouselImage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                     child: Image.asset(
                       imagePaths[index],
-                      width: 100.0,
-                      height: 100.0,
+                      width: 280.0,
+                      height: 200.0,
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -21,7 +21,7 @@ class DetailsItem extends StatelessWidget {
             label,
             textAlign: TextAlign.start,
             style: const TextStyle(
-              color: Colors.blueGrey,
+              color: Colors.redAccent,
               fontWeight: FontWeight.w800,
               fontSize: 22.0,
             ),
@@ -29,11 +29,10 @@ class DetailsItem extends StatelessWidget {
           Text(
             value,
             style: const TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               fontSize: 16.0,
             ),
           ),
-          const Divider(),
         ],
       ),
     );

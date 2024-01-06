@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   final String text;
@@ -23,17 +24,18 @@ class TextFormFieldCustom extends StatelessWidget {
             text,
             style: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w700,
             ),
-          ),
+          ).animate().slide().fade(),
         ),
+        const SizedBox(height: 4),
         Container(
           width: 300,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(
-              color: Colors.white,
+              color: Colors.black,
               width: 1,
             ),
           ),
@@ -43,7 +45,10 @@ class TextFormFieldCustom extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(icon),
+                Icon(
+                  icon,
+                  color: Colors.redAccent,
+                ),
                 const SizedBox(
                   width: 10,
                 ),
@@ -58,7 +63,7 @@ class TextFormFieldCustom extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ).animate().slide().fade(),
       ],
     );
   }

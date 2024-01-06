@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ButtonCustom extends StatelessWidget {
   final String text;
@@ -23,7 +24,7 @@ class ButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
+      width: 220,
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -41,7 +42,12 @@ class ButtonCustom extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-      ),
+      )
+          .animate()
+          .slide(
+            duration: const Duration(seconds: 1),
+          )
+          .fade(),
     );
   }
 }

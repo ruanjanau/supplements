@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String label;
-  const CustomAppBar({Key? key, required this.label}) : super(key: key);
+  final String? label;
+  final IconData? icon;
+  const CustomAppBar({
+    Key? key,
+    this.label,
+    this.icon,
+  }) : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(60.0);
@@ -13,14 +18,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Text(
-          label,
-          style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w800),
+          label!,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+            fontWeight: FontWeight.w800,
+          ),
         ),
       ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.redAccent,
       elevation: 0.0,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back_ios),
+        color: Colors.white,
+        icon: Icon(icon),
         onPressed: () {
           Navigator.of(context).pop();
         },

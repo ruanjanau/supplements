@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'src/app/home/view/home.dart';
 import 'src/app/product/data/model/model.dart';
 
 import 'src/app/login/view/login.dart';
@@ -16,10 +17,12 @@ void main() {
     RepositoryProvider(
       create: (context) => ProductsDataSource(Dio()),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         routes: {
           '/': (_) => const SplashScreen(),
           '/login': (_) => LoginPage(),
-          '/bloc/home/': (context) => BlocProvider(
+          '/home': (_) => const HomePage(),
+          '/bloc/products/': (context) => BlocProvider(
                 create: (_) => ProductsBloc(
                   dataSource: context.read<ProductsDataSource>(),
                 )..add(const ProductsEvent.findAll()),

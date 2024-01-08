@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/datasource/datasource.dart';
-import '../../../data/model/model.dart';
+import '../../../data/datasources/datasource.dart';
+import '../../../data/models/model.dart';
 
 part 'products_event.dart';
 part 'products_state.dart';

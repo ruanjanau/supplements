@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supplements/src/app/components/components.dart';
-import '../../data/model/model.dart';
+import '../../data/models/model.dart';
 
 import '../components/components.dart';
 

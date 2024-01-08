@@ -4,12 +4,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'src/app/home/view/home.dart';
-import 'src/app/product/data/models/model.dart';
+import 'src/app/products/data/models/model.dart';
 
 import 'src/app/login/view/login.dart';
-import 'src/app/product/data/datasources/datasource.dart';
-import 'src/app/product/presentation/view/bloc/products_bloc.dart';
-import 'src/app/product/presentation/view/view.dart';
+import 'src/app/products/data/datasources/datasource.dart';
+import 'src/app/products/presentation/view/bloc/products_bloc.dart';
+import 'src/app/products/presentation/view/view.dart';
 import 'src/app/splash/view/splash.dart';
 
 void main() {

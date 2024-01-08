@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../components/components.dart';
-import '../../data/model/model.dart';
+import '../../data/models/model.dart';
 import '../components/components.dart';
 
 class ProductsDetails extends StatelessWidget {
@@ -62,7 +62,7 @@ class ProductsDetails extends StatelessWidget {
                     const Divider(),
                     const SizedBox(height: 10),
                     Center(
-                      child: ButtonCustom(
+                      child: CustomButton(
                         color: Colors.redAccent,
                         text: 'Adicionar ao Carrinho',
                         onPressed: () {},

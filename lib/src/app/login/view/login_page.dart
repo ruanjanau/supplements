@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_animate/flutter_animate.dart';
-import '../components/components.dart';
 
 import '../../components/components.dart';
+import '../components/components.dart';
 import '../controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
@@ -63,13 +63,13 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 30),
-                      TextFormFieldCustom(
+                      CustomTextField(
                         text: 'Usuário',
                         icon: Icons.person,
                         controller: _usernameController,
                       ),
                       const SizedBox(height: 20),
-                      TextFormFieldCustom(
+                      CustomTextField(
                         text: 'Senha',
                         icon: Icons.lock,
                         controller: _passwordController,
@@ -92,7 +92,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 40),
-                      ButtonCustom(
+                      CustomButton(
                         color: Colors.redAccent,
                         text: '  Entrar  ',
                         onPressed: () {

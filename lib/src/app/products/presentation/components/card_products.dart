@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class CardProducts extends StatelessWidget {
   final String image;
+  final bool stock;
   final String product;
   final String price;
   final String brand;
@@ -10,6 +11,7 @@ class CardProducts extends StatelessWidget {
   const CardProducts({
     Key? key,
     required this.image,
+    required this.stock,
     required this.product,
     required this.price,
     required this.brand,
@@ -23,14 +25,14 @@ class CardProducts extends StatelessWidget {
         width: 190,
         height: 245,
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(14.0),
+          color: stock == true ? Colors.white : Colors.grey,
+          borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
+              color: Colors.redAccent.withOpacity(0.5),
+              spreadRadius: 1,
               blurRadius: 10,
-              offset: const Offset(0, 3),
+              offset: const Offset(0, 6),
             ),
           ],
         ),
@@ -53,12 +55,26 @@ class CardProducts extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              const SizedBox(height: 4),
               Text(
                 brand,
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
+                ),
+              ),
+              Container(
+                height: 20,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: stock == true ? Colors.greenAccent : Colors.grey,
+                ),
+                child: Text(
+                  stock == true ? 'Disponível' : 'Esgotado',
+                  style: TextStyle(
+                    color: stock == true ? Colors.black : Colors.redAccent,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               const SizedBox(height: 6),

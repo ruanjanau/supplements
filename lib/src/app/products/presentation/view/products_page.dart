@@ -14,9 +14,8 @@ class ProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.redAccent,
       appBar: const CustomAppBar(
-        label: 'Produtos',
+        label: 'Suplementos e Acessórios',
         icon: Icons.arrow_back_ios_new,
       ),
       body: BlocListener<ProductsBloc, ProductsState>(
@@ -52,6 +51,7 @@ class ProductsPage extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 1.0,
+                  mainAxisExtent: 220.0,
                   mainAxisSpacing: 12.0,
                 ),
                 itemBuilder: (context, index) {
@@ -66,6 +66,7 @@ class ProductsPage extends StatelessWidget {
                     },
                     child: CardProducts(
                       image: product.image!,
+                      stock: product.stock!,
                       product: product.product!,
                       price: product.price!,
                       brand: product.brand!,

@@ -54,6 +54,7 @@ class CustomTextField extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextFormField(
+                    obscureText: text.toLowerCase() == 'senha',
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                     ),

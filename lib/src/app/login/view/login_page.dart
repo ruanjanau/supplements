@@ -23,31 +23,7 @@ class LoginPage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 120),
-              Center(
-                child: Hero(
-                  tag: 'splash',
-                  child: Image.asset(
-                    'assets/image/j.png',
-                    height: 160,
-                  ),
-                ),
-              )
-                  .animate(
-                    onPlay: (controller) => controller.repeat(),
-                  )
-                  .moveY(
-                    begin: -25,
-                    end: 8,
-                    curve: Curves.easeInOut,
-                    duration: 1000.ms,
-                  )
-                  .then()
-                  .moveY(
-                    begin: 8,
-                    end: -25,
-                    curve: Curves.easeInOut,
-                    duration: 1000.ms,
-                  ),
+              const CustomImageAnimate(),
               const SizedBox(height: 10),
               const ShadowContainer(),
               const SizedBox(height: 30),
@@ -99,31 +75,27 @@ class LoginPage extends StatelessWidget {
                           String username = _usernameController.text;
                           String password = _passwordController.text;
 
-                          loginController.setUsername(username);
-                          loginController.setPassword(password);
-
-                          String? validationMsg =
-                              loginController.validateLogin();
-                          if (validationMsg != null) {
+                          if (username.isEmpty || password.isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(validationMsg),
+                              const SnackBar(
+                                content: Text(
+                                  'Ambos os campos de Login e senha devem estar preenchidos.',
+                                ),
                               ),
                             );
-                          } else {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
-                                );
-                              },
-                            );
-                            Future.delayed(const Duration(seconds: 1), () {
-                              Navigator.pop(context);
-                              Navigator.pushNamed(context, '/home');
-                            });
                           }
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            },
+                          );
+                          Future.delayed(const Duration(seconds: 1), () {
+                            Navigator.pop(context);
+                            Navigator.pushNamed(context, '/home');
+                          });
                         },
                       ),
                     ],

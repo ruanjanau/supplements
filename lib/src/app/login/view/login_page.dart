@@ -75,23 +75,22 @@ class LoginPage extends StatelessWidget {
                           String username = _usernameController.text;
                           String password = _passwordController.text;
 
-                          if (username.isEmpty || password.isEmpty) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text(
-                                  'Ambos os campos de Login e senha devem estar preenchidos.',
-                                ),
-                              ),
-                            );
-                          }
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return const Center(
-                                child: CircularProgressIndicator(),
-                              );
-                            },
-                          );
+                          username.isEmpty || password.isEmpty
+                              ? ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                      'Ambos os campos de Login e senha devem estar preenchidos.',
+                                    ),
+                                  ),
+                                )
+                              : showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return const Center(
+                                      child: CircularProgressIndicator(),
+                                    );
+                                  },
+                                );
                           Future.delayed(const Duration(seconds: 1), () {
                             Navigator.pop(context);
                             Navigator.pushNamed(context, '/home');
